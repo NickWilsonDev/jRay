@@ -1,5 +1,7 @@
 package src;
 
+import src.util.Vector3;
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
@@ -24,13 +26,11 @@ public class JRay {
 
             for (int j = ny - 1; j >= 0; j--) {
                 for(int i = 0; i < nx; i++) {
-                    float r = (float)i / (float)nx;
-                    float g = (float)j / (float)ny;
-                    float b = (float) 0.2;
+                    Vector3 color = new Vector3((float)i / (float)nx, (float)j / (float)ny, (float)0.2);
 
-                    int ir = (int)(255.99 * r);
-                    int ig = (int)(255.99 * g);
-                    int ib = (int)(255.99 * b);
+                    int ir = (int)(255.99 * color.r());
+                    int ig = (int)(255.99 * color.g());
+                    int ib = (int)(255.99 * color.b());
                     outfile.println(ir + " " + ig + " " + ib + "\n");
                 }
             }
