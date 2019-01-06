@@ -61,8 +61,9 @@ public class Vector3 {
                 (veca.vector[0] * vecb.vector[1] - veca.vector[1] * vecb.vector[0]));
     }
 
-    public Vector3 unitVector(Vector3 vec) {
-        return vec.scalarDiv(vec.length());
+    public Vector3 unitVector() {
+        float length = this.length();
+        return this.scalarDiv(length());
     }
 
 
